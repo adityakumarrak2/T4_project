@@ -43,4 +43,4 @@ jobs:
           terraform fmt main1.tf
           terraform fmt variable.tf
           terraform plan 
-          terraform destroy -auto-approve
+          terraform apply --auto-approve
