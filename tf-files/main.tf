@@ -9,7 +9,7 @@ resource "aws_instance" "my_instance" {
   }
 }
 resource "aws_security_group" "my_security_group" {
-  vpc_id      = aws_vpc.AdiVPC.id
+  vpc_id      = "vpc-0ce62b15e4831ef46"
   description = "for provisioning purpose only"
 
   ingress {
