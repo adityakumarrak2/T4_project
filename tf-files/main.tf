@@ -1,6 +1,7 @@
 resource "aws_instance" "my_instance" {
   ami                    = "ami-024e6efaf93d85776"
   instance_type          = "t2.micro"
+count = 1
   key_name               = "key2"
   vpc_security_group_ids = ["sg-0a954d1643b56f6fc"]
  subnet_id = "subnet-05edbbbdbe21f3fbe"
