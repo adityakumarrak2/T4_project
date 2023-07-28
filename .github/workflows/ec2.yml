@@ -39,5 +39,8 @@ jobs:
           cd tf-files/
           terraform init
           terraform validate
+          teraform fmt main.tf
+          teraform fmt main1.tf
+          teraform fmt variable.tf
           terraform plan 
-          terraform apply -auto-approve
+          terraform destroy
