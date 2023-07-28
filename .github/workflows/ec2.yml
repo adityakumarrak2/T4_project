@@ -31,7 +31,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false
-      - name: Terraform Apply
+      - name: Terraform destroy
         id:   apply
         env:
           TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
@@ -39,8 +39,8 @@ jobs:
           cd tf-files/
           terraform init
           terraform validate
-          teraform fmt main.tf
-          teraform fmt main1.tf
-          teraform fmt variable.tf
+          terraform fmt main.tf
+          terraform fmt main1.tf
+          terraform fmt variable.tf
           terraform plan 
           terraform destroy
