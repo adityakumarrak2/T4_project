@@ -40,7 +40,7 @@ jobs:
           terraform init
           terraform validate
           terraform fmt main.tf
-          terraform fmt main1.tf
+          terraform fmt main.tf
           terraform fmt variable.tf
           terraform plan 
           terraform apply --auto-approve
