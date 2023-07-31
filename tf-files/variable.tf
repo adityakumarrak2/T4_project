@@ -28,8 +28,8 @@ default = "key2"
 
 variable "sgid" {
   description = "security group id"
-  type        = string
-default = "["sg-0a954d1643b56f6fc"]"
+  type        = list(string)
+default = ["sg-0a954d1643b56f6fc"]
 }
 
 variable "snid" {
