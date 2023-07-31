@@ -31,7 +31,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false
-      - name: Terraform destroy
+      - name: Terraform apply
         id:   apply
         env:
           TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
