@@ -2,12 +2,6 @@ variable "ec2_name" {
   type = string
 }
 
-variable "ec2_n" {
-  description = "The EC2 resource name"
-  type        = string
-default = "my_instance"
-}
-
 variable "ami_id" {
   description = "The EC2 ami id"
   type        = string
@@ -26,6 +20,12 @@ variable "c" {
 default = "1"
 }
 
+variable "k" {
+  description = "key file to be used"
+  type        = string
+default = "key2"
+}
+
 variable "sgid" {
   description = "security group id"
   type        = string
@@ -42,12 +42,6 @@ variable "tag" {
   description = "The EC2 instance type."
   type        = string
 default = "T4_project007"
-}
-
-variable "sg-rn" {
-  description = "security  group resource name"
-  type        = string
-default = "my_security_group"
 }
 
 variable "vpcid" {

@@ -1,15 +1,15 @@
-resource "aws_instance" var.ec2_n {
+resource "aws_instance" "example" {
   ami                    = var.ami_id
   instance_type          = var.i_t
   count                  = var.c
-  key_name               = key2
+  key_name               = var.k
   vpc_security_group_ids = var.sgid
  subnet_id = var.snid
   tags = {
     Name = var.tag
   }
 }
-resource "aws_security_group" var.sg-rn {
+resource "aws_security_group" "example1" {
   vpc_id      = var.vpcid
   description = "for provisioning purpose only"
 
