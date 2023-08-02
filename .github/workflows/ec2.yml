@@ -2,7 +2,13 @@ name: Provision t3.micro EC2
 
 on:
   push:  # Triggers the workflow on code push
+    branches:
+    - 'main'
+    - 'sidehero'
   pull_request:  # Triggers the workflow on pull request creation/update
+    branches:
+    - 'main'
+    - 'sidehero'
   issues:  # Triggers the workflow on issue generation or updates
     types: [opened, edited]  # Specifies which types of issues should trigger the workflow
   workflow_dispatch:
@@ -31,7 +37,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_wrapper: false
-      - name: Terraform destroy
+      - name: Terraform apply
         id:   apply
         env:
           TF_VAR_ec2_name:  "${{ github.event.inputs.ec2-name }}"
@@ -40,7 +46,7 @@ jobs:
           terraform init
           terraform validate
           terraform fmt main.tf
-          terraform fmt main1.tf
+          terraform fmt main.tf
           terraform fmt variable.tf
           terraform plan 
           terraform apply --auto-approve

@@ -1,16 +1,16 @@
-resource "aws_instance" "my_instance" {
-  ami                    = "ami-024e6efaf93d85776"
-  instance_type          = "t2.micro"
-  count                  = 1
-  key_name               = "key2"
-  vpc_security_group_ids = ["sg-0a954d1643b56f6fc"]
- subnet_id = "subnet-05edbbbdbe21f3fbe"
+resource "aws_instance" "example" {
+  ami                    = var.ami_id
+  instance_type          = var.i_t
+  count                  = var.c
+  key_name               = var.k
+  vpc_security_group_ids = var.sgid
+ subnet_id = var.snid
   tags = {
-    Name = "T4_project007"
+    Name = var.tag
   }
 }
-resource "aws_security_group" "my_security_group" {
-  vpc_id      = "vpc-0ce62b15e4831ef46"
+resource "aws_security_group" "example1" {
+  vpc_id      = var.vpcid
   description = "for provisioning purpose only"
 
   ingress {
