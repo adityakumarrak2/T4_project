@@ -49,3 +49,22 @@ variable "vpcid" {
   type        = string
 default = "vpc-0ce62b15e4831ef46"
 }
+
+variable "bname" {
+  description = "bucket unique name"
+  type        = string
+default = "t4-project005bucket"
+}
+
+variable "acl" {
+  description = "public read/public read+write/private"
+  type        = string
+default = "private"
+}
+
+variable "btag" {
+  description = "tag for bucket"
+  type        = string
+default = "for test purposes"
+}
+
